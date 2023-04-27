@@ -1,0 +1,102 @@
+{% assign text = include.text %}
+
+{% if include.size == 'xs' %}
+  {% assign size_class = 'px-4 py-1 text-2xs' %}
+{% elsif include.size == 'sm' %}
+  {% assign size_class = 'px-4 py-2 text-xs' %}
+{% elsif include.size == 'lg' %}
+  {% assign size_class = 'px-5 py-4 text-base' %}
+{% elsif include.size == 'xl' %}
+  {% assign size_class = 'py-5 px-8 text-base' %}
+{% elsif include.size == 'link' %}
+  {% assign size_class = 'py-3 text-base' %}
+{% else %}
+  {% assign size_class = 'px-5 py-3 text-base' %}
+{% endif %}
+
+{% if include.color == 'black' %}
+  {% assign color_class = 'bg-black text-white hover:bg-gray-extra-dark active:bg-gray-extra-dark' %}
+{% elsif include.color == 'black-purple-hover' %}
+  {% assign color_class = 'bg-black text-white hover:bg-purple-darker active:bg-purple-darker' %}
+{% elsif include.color == 'gradient' %}
+  {% assign color_class = 'button-gradient text-white relative overflow-hidden border-transparent hover:text-white' %}
+{% elsif include.color == 'gray' %}
+  {% assign color_class = 'bg-gray-extra-light text-black hover:bg-gray-medium-light active:bg-gray-medium-light' %}
+{% elsif include.color == 'link' %}
+  {% assign color_class = 'arrow-pink hover:underline' %}
+{% else %}
+  {% assign color_class = 'bg-purple-dark text-white hover:bg-purple-darker active:bg-purple-darker' %}
+{% endif %}
+
+<button class="inline-block cursor-pointer rounded leading-none font-heading font-semibold text-center arrow transition-colors duration-200 ease-in-out {{ size_class }} {{ color_class }}">
+  <span class="relative">{{ text }}</span>
+</button>
+
+<style>
+  .arrow::after {
+    content: " ";
+    position: relative;
+    padding-left: 1rem;
+    height: 0.5rem;
+    background-size: 0.75rem;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-image: url("/assets/img/button-arrow-white.svg");
+    transition: 200ms ease-in-out;
+  }
+
+  .arrow-pink::after {
+    background-image: url("/assets/img/button-arrow-pink.svg");
+  }
+
+  .arrow-blue::after {
+    background-image: url("/assets/img/button-arrow-blue.svg");
+  }
+
+  .arrow-fire::after {
+    background-image: url("/assets/img/button-arrow-fire.svg");
+  }
+
+  .arrow-purple::after {
+    background-image: url("/assets/img/button-arrow-purple.svg");
+  }
+
+  .arrow-teal::after {
+    background-image: url("/assets/img/button-arrow-teal.svg");
+  }
+
+  .bg-gray-extra-light.arrow::after {
+    background-image: url("/assets/img/button-arrow-black.svg");
+  }
+
+  .arrow:hover::after,
+  .arrow:active::after {
+    margin-left: 0.25rem;
+    margin-right: -0.25rem;
+  }
+
+  .button-xl.arrow::after {
+    padding-left: 1.25rem;
+  }
+
+  .button-gradient {
+    background: linear-gradient(90deg, #f75aa6 0%, #c226cb 100%);
+  }
+
+  .button-gradient::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background: #f75aa6;
+    transition: opacity 200ms ease-in-out;
+  }
+
+  .button-gradient:hover::before,
+  .button-gradient:active::before {
+    opacity: 1;
+  }
+</style>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="h-full bg-gray-extra-extra-light" lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-{%- include head.html -%}
+{%- include layout/head.html -%}
 
 <body class="h-full">
   <!--
@@ -14,18 +14,18 @@
   -->
   <div>
 
-  {%- include sidebar.html -%}
+  {%- include layout/sidebar.html -%}
 
   <div class="lg:pl-72">
 
-    {%- include search.html -%}
+    {%- include layout/search.html -%}
 
     <main class="px-10 py-12">
       {{ content }}
     </main>
   </div>
 
-  {%- include footer.html -%}
+  {%- include layout/footer.html -%}
 
   </div>
 

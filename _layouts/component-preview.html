@@ -1,0 +1,110 @@
+---
+layout: default
+---
+
+
+<section class="mb-10">
+  {% include components/heading.html 
+    text = "Typography"
+  %}
+
+  {% include components/eyebrow.html 
+    text = "eyebrow"
+  %}
+
+  {% include components/headline.html 
+    text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  %}
+
+  {% include components/lead.html 
+    text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  %}
+</section>
+
+<section class="mb-10">
+  {% include components/heading.html 
+    text = "Buttons"
+  %}
+
+  {% include components/subheading.html 
+    text = "Sizes"
+  %}
+
+  <div class="flex flex-wrap gap-3 items-start mb-6">
+    {% include components/button.html 
+      size = "xs"
+      text = "Button"
+    %}
+    
+    {% include components/button.html 
+      size = "sm"
+      text = "Button"
+    %}
+    
+    {% include components/button.html 
+      size = "default"
+      text = "Button"
+    %}
+    
+    {% include components/button.html 
+      size = "lg"
+      text = "Button"
+    %}
+    
+    {% include components/button.html 
+      size = "xl"
+      text = "Button"
+    %}
+  </div>
+
+  {% include components/subheading.html 
+    text = "Colors"
+  %}
+
+  <div class="flex flex-wrap gap-3 items-start">
+    {% include components/button.html 
+      color = 'default'
+      text = "Button"
+    %}
+
+    {% include components/button.html 
+      color = 'black'
+      text = "Button"
+    %}
+
+    {% include components/button.html 
+      color = 'black-purple-hover'
+      text = "Button"
+    %}
+
+    {% include components/button.html 
+      color = 'gradient'
+      text = "Button"
+    %}
+
+    {% include components/button.html 
+      color = 'gray'
+      text = "Button"
+    %}
+  </div>
+</section>
+
+<section class="mb-10">
+  {% include components/heading.html 
+    text = "Tables"
+  %}
+
+  {% include components/table-alt.html %}
+
+  {% include components/table.html %}
+</section>
+
+<section class="mb-10">
+  {% include components/heading.html 
+    text = "Cards"
+  %}
+
+  {% include components/cards.html %}
+</section>
+
+{{ content }}
