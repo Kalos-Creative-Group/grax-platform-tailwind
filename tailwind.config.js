@@ -1,13 +1,83 @@
-const colors = require('tailwindcss/colors')
-const defaultTheme = require('tailwindcss/defaultTheme')
-
 module.exports = {
   content: ['*.html', '_site/*.html','_site/**/*.html', '_pages/**/*.md', '_posts/**/*.md', '_layouts/**/*.html', '_includes/**/*.html'],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        black: '#000',
+        white: '#fff',
+        'gray-extra-dark': '#111',
+        'gray-darker': '#222',
+        'gray-dark': '#333',
+        'gray-medium': '#bcbdcc',
+        'gray-medium-light': '#dfe0de',
+        'gray-light': '#9698a3',
+        'gray-extra-light': '#ecedeb',
+        'gray-extra-extra-light': '#f7f7f7',
+        'pink-bright': '#f75aa6',
+        'pink-extra-bright': '#c226cb',
+        pink: '#c459e5',
+        'pink-light': '#e799ff',
+        purple: '#5f6fe6',
+        'purple-dark': '#5462cc',
+        'purple-darker': '#434ea3',
+        'purple-light': '#99a5ff',
+        teal: '#61caea',
+        fire: '#f7685a',
+        'fire-light': '#ff8f85',
+        red: '#ff0000',
+        blue: '#61caea',
+        'blue-light': '#83e2ff',
+        'blue-gray': '#9fb5cd',
+        green: '#15cd8d',
+        'green-light': '#44e3ac',
+      },
+      fontFamily: {
+        sans: [
+          'Inter',
+          'ui-sans-serif',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          '"Noto Sans"',
+          'sans-serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ],
+        'heading': [
+          'Work Sans',
+          'ui-sans-serif',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          '"Noto Sans"',
+          'sans-serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ],
+      },
+      opacity: {
+        8: '0.08',
+      }
+    }
   },
   variants: {
     extend: {}
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/forms'),
+  ]
 }
