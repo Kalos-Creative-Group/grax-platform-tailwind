@@ -23,22 +23,6 @@ module.exports = {
       '7xl': ['4.5rem', { lineHeight: '1' }],
       '8xl': ['6rem', { lineHeight: '1' }],
     },
-    fontSize: {
-      '3xs': '0.75rem',
-      '2xs': '0.8125rem',
-      xs: '0.875rem',
-      sm: '0.9375rem',
-      base: '1rem',
-      lg: '1.125rem',
-      xl: '1.25rem',
-      '2xl': '1.5rem',
-      '3xl': '2rem',
-      '4xl': '2.5rem',
-      '5xl': '3.5rem',
-      '6xl': '4rem',
-      '7xl': '4.5rem',
-      '8xl': '6rem',
-    },
     extend: {
       borderRadius: {
         none: '0',
@@ -122,7 +106,7 @@ module.exports = {
           '"Segoe UI Symbol"',
           '"Noto Color Emoji"',
         ],
-        'heading': [
+        heading: [
           'Work Sans',
           'ui-sans-serif',
           'system-ui',

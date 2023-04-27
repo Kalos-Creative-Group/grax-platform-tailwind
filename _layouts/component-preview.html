@@ -3,31 +3,77 @@ layout: default
 ---
 
 
-<section class="mb-10">
-  {% include components/heading.html 
+<section class="mb-28">
+  {% include components/section.html 
     text = "Typography"
   %}
 
   {% include components/eyebrow.html 
-    text = "eyebrow"
+    text = "headline"
   %}
 
   {% include components/headline.html 
     text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   %}
 
+  {% include components/eyebrow.html 
+    text = "h1"
+  %}
+
+  <h1 class="text-3xl font-heading font-bold leading-tighter tracking-tighter mb-4 max-w-6xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>
+
+  {% include components/eyebrow.html 
+    text = "h2"
+  %}
+
+  <h2 class="text-2xl font-heading font-bold leading-tighter tracking-tighter mb-4 max-w-6xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+
+  {% include components/eyebrow.html 
+    text = "h3"
+  %}
+
+  <h3 class="text-xl font-heading font-bold leading-tighter tracking-tighter mb-4 max-w-6xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+
+  {% include components/eyebrow.html 
+    text = "h4"
+  %}
+
+  <h4 class="text-lg font-heading font-bold leading-tighter tracking-tighter mb-4 max-w-6xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
+
+  {% include components/eyebrow.html 
+    text = "h5"
+  %}
+
+  <h5 class="text-base font-heading font-bold leading-tighter tracking-tighter mb-4 max-w-6xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h5>
+
+  {% include components/eyebrow.html 
+    text = "h6"
+  %}
+
+  <h6 class="text-sm font-heading font-bold leading-tighter tracking-tighter mb-4 max-w-6xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h6>
+
+  {% include components/eyebrow.html 
+    text = "lead"
+  %}
+
   {% include components/lead.html 
     text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   %}
+
+  {% include components/eyebrow.html 
+    text = "paragraph"
+  %}
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </section>
 
-<section class="mb-10">
-  {% include components/heading.html 
+<section class="mb-28">
+  {% include components/section.html 
     text = "Buttons"
   %}
 
-  {% include components/subheading.html 
-    text = "Sizes"
+  {% include components/eyebrow.html 
+    text = "sizes"
   %}
 
   <div class="flex flex-wrap gap-3 items-start mb-6">
@@ -57,8 +103,8 @@ layout: default
     %}
   </div>
 
-  {% include components/subheading.html 
-    text = "Colors"
+  {% include components/eyebrow.html 
+    text = "colors"
   %}
 
   <div class="flex flex-wrap gap-3 items-start">
@@ -89,19 +135,31 @@ layout: default
   </div>
 </section>
 
-<section class="mb-10">
-  {% include components/heading.html 
+<section class="mb-28">
+  {% include components/section.html 
     text = "Tables"
+  %}
+
+  {% include components/eyebrow.html 
+    text = "style 1"
   %}
 
   {% include components/table-alt.html %}
 
+  {% include components/eyebrow.html 
+    text = "style 2"
+  %}
+
   {% include components/table.html %}
 </section>
 
-<section class="mb-10">
-  {% include components/heading.html 
+<section class="mb-28">
+  {% include components/section.html 
     text = "Cards"
+  %}
+
+  {% include components/eyebrow.html 
+    text = "grid"
   %}
 
   {% include components/cards.html %}
