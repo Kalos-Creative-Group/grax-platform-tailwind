@@ -68,7 +68,6 @@ layout: default
   <div class="flex justify-start flex-wrap gap-1 mb-4">
     <div class="bg-red-600 text-white w-32 h-32 flex justify-center items-center">red.600</div>
   </div>
-
 </section>
 
 <section class="mb-28">
@@ -137,6 +136,60 @@ layout: default
 
 <section class="mb-28">
   {% include components/section.html 
+    text = "Page/Section Headings"
+  %}
+
+  {% include components/eyebrow.html 
+    text = "page heading with actions"
+  %}
+
+  <div class="bg-white p-8 rounded-3xl mb-4">
+    <div class="md:flex md:items-center md:justify-between">
+      <div class="min-w-0 flex-1">
+        <h2 class="text-2xl font-heading font-bold leading-tighter tracking-tighter sm:truncate">Lorem ipsum dolor sit amet consectetur</h2>
+      </div>
+      <div class="mt-3 flex flex-wrap gap-2 md:ml-4 md:mt-0">
+        {% include components/button.html 
+          size = 'md'
+          color = 'gray'
+          arrow = true
+          text = "Action"
+        %}
+        {% include components/button.html 
+          size = 'md'
+          color = 'purple'
+          text = "Dismiss"
+        %}
+      </div>
+    </div>
+  </div>
+
+  {% include components/eyebrow.html 
+    text = "section heading with actions"
+  %}
+
+  <div class="bg-white p-8 rounded-3xl mb-4">
+    <div class="border-b border-gray-200 pb-5 md:flex md:items-center md:justify-between">
+      <h3 class="text-xl font-heading font-bold leading-tighter tracking-tighter md:truncate">Lorem ipsum dolor sit amet consectetur</h3>
+      <div class="mt-3 flex flex-wrap gap-2 md:ml-4 md:mt-0">
+        {% include components/button.html 
+          size = 'sm'
+          color = 'gray'
+          arrow = true
+          text = "Action"
+        %}
+        {% include components/button.html 
+          size = 'sm'
+          color = 'purple'
+          text = "Dismiss"
+        %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mb-28">
+  {% include components/section.html 
     text = "Buttons"
   %}
 
@@ -144,7 +197,7 @@ layout: default
     text = "sizes"
   %}
 
-  <div class="flex flex-wrap gap-3 items-start mb-6">
+  <div class="flex flex-wrap gap-2 items-start mb-6">
     {% include components/button.html 
       size = "xs"
       text = "Button"
@@ -175,7 +228,7 @@ layout: default
     text = "colors"
   %}
 
-  <div class="flex flex-wrap gap-3 items-start">
+  <div class="flex flex-wrap gap-2 items-start">
     {% include components/button.html 
       color = 'default'
       text = "Button"
@@ -198,6 +251,47 @@ layout: default
 
     {% include components/button.html 
       color = 'gray'
+      text = "Button"
+    %}
+  </div>
+
+  {% include components/eyebrow.html 
+    text = "arrows"
+  %}
+
+  <div class="flex flex-wrap gap-2 items-start">
+    {% include components/button.html 
+      color = 'default'
+      size = "xs"
+      arrow = true
+      text = "Button"
+    %}
+
+    {% include components/button.html 
+      color = 'black'
+      size = "sm"
+      arrow = true
+      text = "Button"
+    %}
+
+    {% include components/button.html 
+      color = 'black-purple-hover'
+      size = "default"
+      arrow = true
+      text = "Button"
+    %}
+
+    {% include components/button.html 
+      color = 'gradient'
+      size = "lg"
+      arrow = true
+      text = "Button"
+    %}
+
+    {% include components/button.html 
+      color = 'gray'
+      size = "xl"
+      arrow = true
       text = "Button"
     %}
   </div>
@@ -245,7 +339,7 @@ layout: default
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum.</p>
         </div>
         <div class="mt-4">
-          <div class="flex flex-wrap gap-3">
+          <div class="flex flex-wrap gap-2">
             {% include components/button.html 
               size = 'sm'
               color = 'gray'

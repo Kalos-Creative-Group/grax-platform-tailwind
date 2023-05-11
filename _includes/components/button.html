@@ -28,7 +28,7 @@
   {% assign color_class = 'bg-purple-600 text-white hover:bg-purple-700 active:bg-purple-700' %}
 {% endif %}
 
-<button class="inline-block cursor-pointer rounded leading-none font-heading font-semibold text-center arrow transition-colors duration-200 ease-in-out {{ size_class }} {{ color_class }}">
+<button class="inline-block cursor-pointer rounded leading-none font-heading font-semibold text-center transition-colors duration-200 ease-in-out {% if include.arrow == true %}arrow{% endif %} {{ size_class }} {{ color_class }}">
   <span class="relative">{{ text }}</span>
 </button>
 
