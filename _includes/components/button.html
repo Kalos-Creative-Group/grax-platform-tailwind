@@ -15,17 +15,17 @@
 {% endif %}
 
 {% if include.color == 'black' %}
-  {% assign color_class = 'bg-black text-white hover:bg-gray-extra-dark active:bg-gray-extra-dark' %}
+  {% assign color_class = 'bg-black text-white hover:bg-gray-900 active:bg-gray-900' %}
 {% elsif include.color == 'black-purple-hover' %}
-  {% assign color_class = 'bg-black text-white hover:bg-purple-darker active:bg-purple-darker' %}
+  {% assign color_class = 'bg-black text-white hover:bg-purple-700 active:bg-purple-700' %}
 {% elsif include.color == 'gradient' %}
   {% assign color_class = 'button-gradient text-white relative overflow-hidden border-transparent hover:text-white' %}
 {% elsif include.color == 'gray' %}
-  {% assign color_class = 'bg-gray-extra-light text-black hover:bg-gray-medium-light active:bg-gray-medium-light' %}
+  {% assign color_class = 'bg-gray-100 text-black hover:bg-gray-300 active:bg-gray-300' %}
 {% elsif include.color == 'link' %}
   {% assign color_class = 'arrow-pink hover:underline' %}
 {% else %}
-  {% assign color_class = 'bg-purple-dark text-white hover:bg-purple-darker active:bg-purple-darker' %}
+  {% assign color_class = 'bg-purple-600 text-white hover:bg-purple-700 active:bg-purple-700' %}
 {% endif %}
 
 <button class="inline-block cursor-pointer rounded leading-none font-heading font-semibold text-center arrow transition-colors duration-200 ease-in-out {{ size_class }} {{ color_class }}">
@@ -49,10 +49,6 @@
     background-image: url("/assets/img/button-arrow-pink.svg");
   }
 
-  .arrow-blue::after {
-    background-image: url("/assets/img/button-arrow-blue.svg");
-  }
-
   .arrow-fire::after {
     background-image: url("/assets/img/button-arrow-fire.svg");
   }
@@ -65,7 +61,7 @@
     background-image: url("/assets/img/button-arrow-teal.svg");
   }
 
-  .bg-gray-extra-light.arrow::after {
+  .bg-gray-100.arrow::after {
     background-image: url("/assets/img/button-arrow-black.svg");
   }
 
