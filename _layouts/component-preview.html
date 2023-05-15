@@ -120,18 +120,18 @@ layout: default
   <h6 class="text-sm font-heading font-bold leading-tighter tracking-tighter mb-4 max-w-6xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h6>
 
   {% include components/eyebrow.html 
-    text = "lead"
+    text = "lead (with link)"
   %}
 
   {% include components/lead.html 
-    text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    text = "Lorem ipsum dolor sit amet, consectetur <a class=\"text-purple-600 underline\" href=\"https://www.grax.com/\" target=\"_blank\">adipiscing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   %}
 
   {% include components/eyebrow.html 
-    text = "paragraph"
+    text = "paragraph (with link)"
   %}
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur <a class="text-purple-600 underline" href="https://www.grax.com/" target="_blank">adipiscing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </section>
 
 <section class="mb-28">
