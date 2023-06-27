@@ -68,7 +68,7 @@ module.exports = {
           100: '#ecedeb', // gray-extra-light
           200: '#dfe0de', // gray-medium-light
           300: '#c5c5c5',
-          400: '#9698a3', // gray-light
+          400: '#888',
           500: '#555', 
           600: '#444', 
           700: '#333', // gray-dark
@@ -81,7 +81,7 @@ module.exports = {
           100: '#ecedeb', // gray-extra-light
           200: '#dfe0de', // gray-medium-light
           300: '#c5c5c5',
-          400: '#9698a3', // gray-light
+          400: '#888',
           500: '#555', 
           600: '#444', 
           700: '#333', // gray-dark
@@ -94,7 +94,7 @@ module.exports = {
           100: '#ecedeb', // gray-extra-light
           200: '#dfe0de', // gray-medium-light
           300: '#c5c5c5',
-          400: '#9698a3', // gray-light
+          400: '#888',
           500: '#555', 
           600: '#444', 
           700: '#333', // gray-dark
@@ -107,7 +107,7 @@ module.exports = {
           100: '#ecedeb', // gray-extra-light
           200: '#dfe0de', // gray-medium-light
           300: '#c5c5c5',
-          400: '#9698a3', // gray-light
+          400: '#888',
           500: '#555', 
           600: '#444', 
           700: '#333', // gray-dark
@@ -120,7 +120,7 @@ module.exports = {
           100: '#ecedeb', // gray-extra-light
           200: '#dfe0de', // gray-medium-light
           300: '#c5c5c5',
-          400: '#9698a3', // gray-light
+          400: '#888',
           500: '#555', 
           600: '#444', 
           700: '#333', // gray-dark
@@ -394,7 +394,7 @@ module.exports = {
           200: '#d8dbe1', // read-only input
           300: '#caccd7',
           400: '#bcbdcc', // gray-medium
-          500: '#9f9fb5',
+          500: '#9698a3', // gray-light
           600: '#8c89a2',
           700: '#79768c',
           800: '#636172',
