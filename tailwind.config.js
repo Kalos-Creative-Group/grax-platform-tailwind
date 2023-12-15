@@ -451,10 +451,59 @@ module.exports = {
           '"Noto Color Emoji"',
         ],
       },
+      cursor: {
+       'help': 'help',
+       'zoom-in': 'zoom-in',
+      },
       opacity: {
         8: '0.08',
-      }
-    }
+      },
+      letterSpacing: {
+        tightest: '-2px',
+        tighter: '-1px',
+        tight: '-.5px',
+        normal: '0',
+        wide: '.5px',
+        wider: '1px',
+        widest: '2px',
+      },
+    },
+    lineHeight: {
+      none: '1',
+      tighter: '1.125',
+      tight: '1.25',
+      snug: '1.375',
+      normal: '1.5',
+      relaxed: '1.625',
+      loose: '2',
+      '3': '.75rem',
+      '4': '1rem',
+      '5': '1.25rem',
+      '6': '1.5rem',
+      '7': '1.75rem',
+      '8': '2rem',
+      '9': '2.25rem',
+      '10': '2.5rem',
+    },
+    maxWidth: {
+      '2xs': '16rem',
+    },
+    spacing: {
+      '13': '3.25rem',
+      '15': '3.75rem',
+      '18': '4.5rem',
+      '22': '5.5rem',
+      '30': '7.5rem',
+      '34': '8.5rem',
+      '42': '10.5rem',
+      '50': '12.5rem',
+      '90': '22.5rem',
+      '112': '28rem',
+    },
+    zIndex: {
+      '9998': '9998',
+      '9999': '9999',
+    },
   },
   variants: {
     extend: {}
