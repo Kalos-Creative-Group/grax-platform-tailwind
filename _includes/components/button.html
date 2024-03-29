@@ -1,3 +1,4 @@
+{% assign full_width = include.full_width %}
 {% assign text = include.text %}
 
 {% if include.size == 'xs' %}
@@ -23,12 +24,12 @@
 {% elsif include.color == 'gray' %}
   {% assign color_class = 'bg-gray-100 text-black hover:bg-gray-300 active:bg-gray-300' %}
 {% elsif include.color == 'link' %}
-  {% assign color_class = 'arrow-pink hover:underline' %}
+  {% assign color_class = 'arrow arrow-pink hover:underline' %}
 {% else %}
   {% assign color_class = 'bg-purple-600 text-white hover:bg-purple-700 active:bg-purple-700' %}
 {% endif %}
 
-<button class="inline-block cursor-pointer rounded leading-none font-heading font-semibold text-center transition-colors duration-200 ease-in-out {% if include.arrow == true %}arrow{% endif %} {{ size_class }} {{ color_class }}">
+<button class="inline-block cursor-pointer rounded leading-none font-heading font-semibold text-center transition-colors duration-200 ease-in-out {% if include.full_width == true %}w-full{% endif %} {% if include.arrow == true %}arrow{% endif %} {{ size_class }} {{ color_class }}">
   <span class="relative">{{ text }}</span>
 </button>
 
@@ -61,7 +62,7 @@
     background-image: url("/assets/img/button-arrow-teal.svg");
   }
 
-  .bg-gray-100.arrow::after {
+  .arrow-black.arrow::after {
     background-image: url("/assets/img/button-arrow-black.svg");
   }
 
