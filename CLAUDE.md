@@ -63,6 +63,8 @@ The GRAX logo features a gradient-filled mark with the wordmark. Always use the 
 - Use white/light version on dark backgrounds
 - Never distort, rotate, or apply effects to the logo
 - Minimum size: 100px wide for digital displays
+- When used against light backgrounds, set the wordmark fill to #000
+- When used against dark backgrounds, set the wordmark fill to #fff
 
 ---
 
