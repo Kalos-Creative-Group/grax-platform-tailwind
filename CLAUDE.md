@@ -1,38 +1,8 @@
 # GRAX Frontend Code & Style Guide
 
-## Overview
-
-This guide defines the frontend development standards for all GRAX web projects. It serves as a single source of truth for visual design, code standards, and technical implementation requirements. All new web projects should follow these guidelines to ensure brand consistency and technical excellence.
-
-**Brand Promise:** "Adapt Faster" - This central message should guide all design and content decisions.
-
----
-
-## Table of Contents
-
-1. [Brand Identity](#brand-identity)
-2. [Technical Requirements](#technical-requirements)
-3. [Color Palette](#color-palette)
-4. [Typography](#typography)
-5. [Spacing & Layout](#spacing--layout)
-6. [Components](#components)
-7. [Accessibility](#accessibility)
-8. [SEO Standards](#seo-standards)
-9. [Build Pipeline](#build-pipeline)
-
----
+**Brand Promise:** "Adapt Faster" — Capture and act on every change in your data over time. Turn historical data into a strategic asset.
 
 ## Brand Identity
-
-### Core Message
-
-**"Adapt Faster"** - This is GRAX's central brand promise and should guide all content.
-
-### Supporting Messages
-
-- Capture and act on every single change in your data over time
-- Turn historical data into strategic asset
-- Generate revenue, retain customers, meet regulatory compliance
 
 ### Logo
 
@@ -79,51 +49,7 @@ All GRAX web projects must use:
 - **Markup:** Semantic HTML5
 - **JavaScript:** ES6+ with minification and compression
 
-### Tailwind Configuration
-
-Use this as your base `tailwind.config.js`:
-
-```javascript
-module.exports = {
-  content: [
-    './**/*.html',
-    './**/*.js',
-    './**/*.jsx',
-    './**/*.tsx',
-    './**/*.vue',
-  ],
-  theme: {
-    screens: {
-      sm: '580px',
-      md: '760px',
-      lg: '940px',
-      xl: '1180px',
-    },
-    // See Color Palette section for full colors config
-    // See Typography section for fonts config
-    extend: {
-      // See sections below for extends
-    },
-  },
-  plugins: [
-    require('@tailwindcss/forms'),
-  ],
-}
-```
-
-### PostCSS Configuration
-
-Required `postcss.config.js`:
-
-```javascript
-module.exports = {
-  plugins: [
-    require("tailwindcss")("./tailwind.config.js"),
-    require("postcss-import"),
-    require("autoprefixer")
-  ]
-}
-```
+All configuration values (colors, fonts, spacing, shadows, etc.) live in `tailwind.config.js` and `postcss.config.js` — refer to those files directly for the current config.
 
 ---
 
@@ -185,6 +111,15 @@ module.exports = {
 | Deep Purple | `#0a053d` | `eggplant-950` | Rich dark backgrounds |
 | Read-only Input | `#d8dbe1` | `periwinkle-200` | Disabled form fields |
 
+### Sub-Brand Colors — Capstorm
+
+| Color Name | Hex | Tailwind Class | Usage |
+|------------|-----|----------------|-------|
+| Sapphire | `#0f3ce0` | `sapphire-700` | Primary brand color (Capstorm) |
+| Sapphire Light | `#639fff` | `sapphire-400` | Subtle highlights, backgrounds |
+| Sapphire Dark | `#133bc0` | `sapphire-800` | Hover states, emphasis |
+| Sapphire Darker | `#193996` | `sapphire-900` | Active states, pressed buttons |
+
 ### Gradients
 
 **Primary Gradient (Pink to Bright Pink):**
@@ -199,190 +134,7 @@ background: linear-gradient(91.14%, #5f6fe6 0%, #552c98 100%);
 ```
 Use for: Logo, brand elements, special features
 
-### Tailwind Colors Configuration
-
-Add this to your `tailwind.config.js`:
-
-```javascript
-colors: {
-  inherit: 'inherit',
-  current: 'currentColor',
-  transparent: 'transparent',
-  black: '#000',
-  white: '#fff',
-  gray: {
-    50: '#f7f7f7',
-    100: '#ecedeb',
-    200: '#dfe0de',
-    300: '#c5c5c5',
-    400: '#888',
-    500: '#616161',
-    600: '#444',
-    700: '#333',
-    800: '#222',
-    900: '#111',
-    950: '#0a0a0a',
-  },
-  red: {
-    50: '#fff0f0',
-    100: '#ffdddd',
-    200: '#ffc0c0',
-    300: '#ff9494',
-    400: '#ff5757',
-    500: '#ff2323',
-    600: '#ff0000',
-    700: '#d70000',
-    800: '#b10303',
-    900: '#920a0a',
-    950: '#500000',
-  },
-  green: {
-    50: '#ecfdf5',
-    100: '#d2f9e4',
-    200: '#a6ffdf',
-    300: '#70e5b5',
-    400: '#44e3ac',
-    500: '#15cd8d',
-    600: '#079466',
-    700: '#067654',
-    800: '#075e44',
-    900: '#074d39',
-    950: '#032b21',
-  },
-  blue: {
-    50: '#f1fafe',
-    100: '#e3f3fb',
-    200: '#c0e8f7',
-    300: '#83e2ff',
-    400: '#61caea',
-    500: '#22abd5',
-    600: '#148ab5',
-    700: '#116f93',
-    800: '#125e7a',
-    900: '#154e65',
-    950: '#0e3243',
-  },
-  sky: {
-    50: '#f0faff',
-    100: '#e5f6fd',
-    200: '#b9eafe',
-    300: '#7cdbfd',
-    400: '#36cafa',
-    500: '#0cb4eb',
-    600: '#009edb',
-    700: '#0173a3',
-    800: '#066186',
-    900: '#0b506f',
-    950: '#07334a',
-  },
-  purple: {
-    50: '#eff4fe',
-    100: '#e2ebfd',
-    200: '#cad9fb',
-    300: '#aabff7',
-    400: '#99a5ff',
-    500: '#5f6fe6',
-    600: '#5462cc',
-    700: '#434ea3',
-    800: '#373b9c',
-    900: '#33377c',
-    950: '#1e1f48',
-  },
-  pink: {
-    50: '#fcf5fe',
-    100: '#f7eafd',
-    200: '#efd3fb',
-    300: '#e799ff',
-    400: '#d681f1',
-    500: '#c459e5',
-    600: '#a731c8',
-    700: '#8d26a5',
-    800: '#742187',
-    900: '#63206f',
-    950: '#3f0949',
-  },
-  rose: {
-    50: '#fdf2f8',
-    100: '#fde6f2',
-    200: '#fccee6',
-    300: '#fba6d1',
-    400: '#f75aa6',
-    500: '#f14392',
-    600: '#e0226f',
-    700: '#c31355',
-    800: '#a11346',
-    900: '#86153e',
-    950: '#520521',
-  },
-  lavendar: {
-    50: '#fef4ff',
-    100: '#fbe8ff',
-    200: '#f8d0fe',
-    300: '#f4acfb',
-    400: '#ee7af8',
-    500: '#e147ee',
-    600: '#c226cb',
-    700: '#a91dae',
-    800: '#8b1a8e',
-    900: '#741b74',
-    950: '#4d054c',
-  },
-  fire: {
-    50: '#fef3f2',
-    100: '#fee4e2',
-    200: '#fecfca',
-    300: '#ff8f85',
-    400: '#f7685a',
-    500: '#ef5344',
-    600: '#dc3626',
-    700: '#b92a1c',
-    800: '#99261b',
-    900: '#7f261d',
-    950: '#450f0a',
-  },
-  steel: {
-    50: '#f4f7fa',
-    100: '#e7ecf2',
-    200: '#d4dee9',
-    300: '#b6c8da',
-    400: '#9fb5cd',
-    500: '#7993b8',
-    600: '#677ea9',
-    700: '#5b6e9a',
-    800: '#4e5b7f',
-    900: '#424c66',
-    950: '#2b3140',
-  },
-  periwinkle: {
-    50: '#f5f6f8',
-    100: '#edeef2',
-    200: '#d8dbe1',
-    300: '#caccd7',
-    400: '#bcbdcc',
-    500: '#9698a3',
-    600: '#8c89a2',
-    700: '#79768c',
-    800: '#636172',
-    900: '#52515e',
-    950: '#302f37',
-  },
-  eggplant: {
-    50: '#e7edff',
-    100: '#d4dfff',
-    200: '#b1c3ff',
-    300: '#829aff',
-    400: '#5160ff',
-    500: '#2b2aff',
-    600: '#1d06ff',
-    700: '#1800ff',
-    800: '#1402d1',
-    900: '#160da2',
-    950: '#0a053d',
-  },
-}
-```
-
----
+See `tailwind.config.js` for the full colors definition including all scales above.
 
 ## Typography
 
@@ -406,39 +158,6 @@ Include in your `<head>`:
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Work+Sans:wght@400;600;700;800&display=swap" type="text/css" media="all" />
 ```
 
-### Tailwind Font Configuration
-
-Add to your `tailwind.config.js`:
-
-```javascript
-fontFamily: {
-  sans: [
-    'Inter',
-    'ui-sans-serif',
-    'system-ui',
-    '-apple-system',
-    'BlinkMacSystemFont',
-    '"Segoe UI"',
-    'Roboto',
-    '"Helvetica Neue"',
-    'Arial',
-    'sans-serif',
-  ],
-  heading: [
-    'Work Sans',
-    'ui-sans-serif',
-    'system-ui',
-    '-apple-system',
-    'BlinkMacSystemFont',
-    '"Segoe UI"',
-    'Roboto',
-    '"Helvetica Neue"',
-    'Arial',
-    'sans-serif',
-  ],
-},
-```
-
 ### Font Sizes
 
 | Size Name | Value | Tailwind Class | Usage |
@@ -457,67 +176,6 @@ fontFamily: {
 | 6xl | 4rem (64px) | `text-6xl` | Large H1 |
 | 7xl | 4.5rem (72px) | `text-7xl` | Hero titles |
 | 8xl | 6rem (96px) | `text-8xl` | Display titles |
-
-Add to `tailwind.config.js`:
-
-```javascript
-fontSize: {
-  '3xs': '0.75rem',
-  '2xs': '0.8125rem',
-  xs: '0.875rem',
-  sm: '0.9375rem',
-  base: '1rem',
-  lg: '1.125rem',
-  xl: '1.25rem',
-  '2xl': '1.5rem',
-  '3xl': '2rem',
-  '4xl': '2.5rem',
-  '5xl': '3.5rem',
-  '6xl': '4rem',
-  '7xl': '4.5rem',
-  '8xl': '6rem',
-},
-```
-
-### Line Heights
-
-Add to `tailwind.config.js` extend:
-
-```javascript
-lineHeight: {
-  none: '1',
-  tighter: '1.125',
-  tight: '1.25',
-  snug: '1.375',
-  normal: '1.5',
-  relaxed: '1.625',
-  loose: '2',
-  '3': '.75rem',
-  '4': '1rem',
-  '5': '1.25rem',
-  '6': '1.5rem',
-  '7': '1.75rem',
-  '8': '2rem',
-  '9': '2.25rem',
-  '10': '2.5rem',
-},
-```
-
-### Letter Spacing
-
-Add to `tailwind.config.js` extend:
-
-```javascript
-letterSpacing: {
-  tightest: '-2px',
-  tighter: '-1px',
-  tight: '-.5px',
-  normal: '0',
-  wide: '.5px',
-  wider: '1px',
-  widest: '2px',
-},
-```
 
 ### Typography Usage Examples
 
@@ -556,83 +214,9 @@ letterSpacing: {
 | Large | 940px | `lg:` | Desktop |
 | Extra Large | 1180px | `xl:` | Large desktop |
 
-### Custom Spacing Scale
-
-Add to `tailwind.config.js` extend:
-
-```javascript
-spacing: {
-  '13': '3.25rem',
-  '15': '3.75rem',
-  '18': '4.5rem',
-  '22': '5.5rem',
-  '30': '7.5rem',
-  '34': '8.5rem',
-  '42': '10.5rem',
-  '50': '12.5rem',
-  '90': '22.5rem',
-  '112': '28rem',
-},
-```
-
-### Max Width
-
-Add to `tailwind.config.js` extend:
-
-```javascript
-maxWidth: {
-  '2xs': '16rem',
-},
-```
-
-### Border Radius
-
-Add to `tailwind.config.js` extend:
-
-```javascript
-borderRadius: {
-  none: '0',
-  px: '1px',
-  sm: '0.125rem',
-  default: '0.25rem',
-  md: '0.375rem',
-  lg: '0.5rem',
-  xl: '0.75rem',
-  '2xl': '1rem',
-  '3xl': '1.5rem',
-  '4xl': '2.5rem',
-  '5xl': '5rem',
-  full: '9999px',
-},
-```
+Spacing, border-radius, box-shadow, and other extend values are defined in `tailwind.config.js`.
 
 **Note:** GRAX designs favor larger border radii. Use `rounded-3xl` (1.5rem/24px) for cards and `rounded-full` for pills/badges.
-
-### Box Shadows
-
-Add to `tailwind.config.js` extend:
-
-```javascript
-boxShadow: {
-  xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
-  sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-  light: '0 4px 8px rgba(0,0,0,0.12)',
-  default: '0 4px 8px rgba(0,0,0,0.24)',
-  md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-  lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-  xl: '0 16px 104px 0 rgba(0,0,0,0.24)',
-  'xl-light': '0 16px 104px 0 rgba(0,0,0,0.12)',
-  '2xl': '0 40px 104px 0 rgba(0,0,0,0.24)',
-  '2xl-light': '0 40px 104px 0 rgba(0,0,0,0.12)',
-  inner: 'inset 0 4px 8px 0 rgba(0, 0, 0, 0.32)',
-  outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
-  none: 'none',
-  'blue-light': '0 0 24px 4px #83E2FF',
-  'pink': '0 0 24px 4px #c459e5',
-  'fire': '0 0 24px 4px #f7685a',
-  'purple': '0 0 24px 4px #5f6fe6',
-},
-```
 
 ---
 
@@ -889,282 +473,37 @@ Use ARIA attributes when semantic HTML is insufficient:
 
 ## SEO Standards
 
-### Meta Tags
+Every page must include: charset, viewport, title, description, OG tags, Twitter card tags, and canonical URL.
 
-Every page must include:
-
-```html
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Page Title - GRAX</title>
-  <meta name="description" content="Concise description of page content (150-160 characters)">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.grax.com/page">
-  <meta property="og:title" content="Page Title - GRAX">
-  <meta property="og:description" content="Concise description of page content">
-  <meta property="og:image" content="https://www.grax.com/share-image.jpg">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://www.grax.com/page">
-  <meta property="twitter:title" content="Page Title - GRAX">
-  <meta property="twitter:description" content="Concise description of page content">
-  <meta property="twitter:image" content="https://www.grax.com/share-image.jpg">
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://www.grax.com/page">
-</head>
-```
-
-### Title Tags
-
-- Every page must have exactly one `<title>` tag
-- Format: `Primary Keyword - Secondary Keyword | GRAX`
-- Max length: 60 characters
-- Include brand name at the end
-
-### H1 Tags
-
-- Every page must have exactly one `<h1>` tag
-- Should contain primary keyword for the page
-- Should match or closely align with `<title>` tag
-- Must be the first heading on the page
-
-### Heading Hierarchy
-
-```html
-<h1>Main Page Title</h1>
-  <h2>Major Section</h2>
-    <h3>Sub-section</h3>
-    <h3>Sub-section</h3>
-  <h2>Major Section</h2>
-    <h3>Sub-section</h3>
-      <h4>Detail</h4>
-```
-
-Never skip levels (e.g., don't jump from `<h2>` to `<h4>`).
-
-### Structured Data
-
-Include JSON-LD structured data when applicable:
-
-```html
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "GRAX",
-  "url": "https://www.grax.com",
-  "logo": "https://www.grax.com/logo.png"
-}
-</script>
-```
-
-### Performance
-
-SEO rankings are influenced by page speed:
-- First Contentful Paint (FCP): < 1.8s
-- Largest Contentful Paint (LCP): < 2.5s
-- Total Blocking Time (TBT): < 200ms
-- Cumulative Layout Shift (CLS): < 0.1
+- **Title format:** `Primary Keyword - Secondary Keyword | GRAX` (max 60 chars)
+- Exactly one `<h1>` per page, containing the primary keyword, matching the `<title>`
+- Never skip heading levels (e.g., don't jump from `<h2>` to `<h4>`)
+- Include JSON-LD structured data when applicable
+- Performance targets: FCP < 1.8s, LCP < 2.5s, TBT < 200ms, CLS < 0.1
 
 ---
 
 ## Build Pipeline
 
-### Required Tools
+Build tooling (Tailwind, PostCSS, Autoprefixer) and dependencies are defined in `package.json`. CSS source is in `assets/css/style.css`, build output goes to `_site/`.
 
-All GRAX projects must include:
+**Build:** `npm run build` (use `NODE_ENV=production` for minification)
 
-1. **Tailwind CSS** - CSS framework
-2. **PostCSS** - CSS processing
-3. **Autoprefixer** - Browser compatibility
-4. **CSS Minification** - Optimize file size
-5. **JavaScript Minification** - Optimize file size
-
-### Package.json Dependencies
-
-Minimum required dependencies:
-
-```json
-{
-  "devDependencies": {
-    "@tailwindcss/forms": "^0.5.3",
-    "autoprefixer": "^10.4.2",
-    "postcss": "^8.4.31",
-    "postcss-cli": "^10.0.0",
-    "postcss-import": "^14.0.0",
-    "tailwindcss": "^3.3.2"
-  }
-}
-```
-
-### CSS Pipeline
-
-**Input:** `assets/css/style.css`
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Custom styles here */
-```
-
-**Build Command:**
-```bash
-npx postcss assets/css/style.css -o _site/assets/css/style.css
-```
-
-For production, add minification:
-```bash
-NODE_ENV=production npx postcss assets/css/style.css -o _site/assets/css/style.css
-```
-
-### JavaScript Pipeline
-
-Use modern JavaScript (ES6+) with bundling and minification:
-
-**Recommended Tools:**
-- **Webpack** - Module bundler
-- **Rollup** - Library bundler
-- **Vite** - Fast build tool
-- **esbuild** - Fast minifier
-
-**Minimum Requirements:**
-- Transpile ES6+ to ES5 for older browser support (if needed)
-- Minify JavaScript files
-- Source maps for debugging
-- Code splitting for large applications
-
-### Image Optimization
-
-All images should be:
-- Compressed (use tools like ImageOptim, TinyPNG)
-- Served in modern formats (WebP with fallbacks)
-- Appropriately sized (no oversized images)
-- Lazy loaded when below the fold
-
-### Asset Organization
-
-```
-/assets
-  /css
-    style.css           # Source CSS
-  /js
-    main.js             # Source JS
-  /img
-    logo.svg            # SVG assets
-    *.jpg               # Image assets
-  /fonts                # Web fonts (if not using CDN)
-
-/_site                  # Build output
-  /assets
-    /css
-      style.css         # Minified CSS
-    /js
-      main.js           # Minified JS
-```
-
-### Performance Checklist
-
-Before deploying any GRAX site:
-
-- [ ] CSS is minified and compressed (gzip/brotli)
-- [ ] JavaScript is minified and compressed
-- [ ] Images are optimized and appropriately sized
-- [ ] Fonts are loaded efficiently (preload, font-display)
-- [ ] Critical CSS is inlined or loaded first
-- [ ] Unnecessary JavaScript is deferred or removed
-- [ ] Browser caching headers are set
-- [ ] CDN is configured (if applicable)
-- [ ] HTTP/2 is enabled
-- [ ] SSL certificate is installed
-
-### Deployment
-
-**Build Process:**
-1. Install dependencies: `npm install`
-2. Run build: `npm run build`
-3. Test locally: Check all pages, forms, and interactions
-4. Deploy to staging environment
-5. Run QA checks (accessibility, performance, cross-browser)
-6. Deploy to production
-7. Verify production deployment
+**Requirements:** All deployed code must have minified CSS/JS, optimized images (WebP with fallbacks, lazy loaded below fold), and Lighthouse scores 90+.
 
 ---
 
-## Quick Reference
-
-### Essential Tailwind Classes
-
-**Layout:**
-- Container: `max-w-5xl mx-auto px-4`
-- Flexbox: `flex flex-wrap justify-between items-center`
-- Grid: `grid grid-cols-1 md:grid-cols-3 gap-4`
-
-**Spacing:**
-- Padding: `p-4`, `px-8`, `py-6`
-- Margin: `m-4`, `mx-auto`, `my-8`, `mb-10`
-
-**Typography:**
-- Font: `font-heading`, `font-sans`
-- Size: `text-base`, `text-2xl`, `text-5xl`
-- Weight: `font-semibold`, `font-bold`
-- Color: `text-gray-700`, `text-purple-600`
-
-**Colors:**
-- Background: `bg-white`, `bg-gray-50`, `bg-purple-600`
-- Text: `text-black`, `text-white`, `text-pink-500`
-- Border: `border-gray-200`, `border-purple-600`
-
-**Effects:**
-- Shadow: `shadow-light`, `shadow-xl`
-- Rounded: `rounded-3xl`, `rounded-full`
-- Transition: `transition-colors duration-200 ease-in-out`
-
-**Responsive:**
-- Mobile First: `text-base md:text-xl lg:text-2xl`
-- Hidden: `hidden md:block`
-- Width: `w-full md:w-1/2 xl:w-1/3`
-
-### Code Review Checklist
+## Code Review Checklist
 
 Before submitting any GRAX frontend code:
 
-- [ ] Uses Tailwind CSS configuration from this guide
 - [ ] Follows GRAX color palette strictly
 - [ ] Uses Work Sans for headings, Inter for body
-- [ ] Has semantic HTML structure
-- [ ] Includes exactly one `<h1>` per page
-- [ ] Has proper meta tags (title, description, OG)
+- [ ] Semantic HTML with exactly one `<h1>` per page
+- [ ] Proper meta tags (title, description, OG)
 - [ ] Meets WCAG AA color contrast requirements
-- [ ] Has keyboard navigation support
-- [ ] Includes focus indicators on interactive elements
-- [ ] Has appropriate ARIA labels where needed
-- [ ] Images have alt text
-- [ ] Forms have labels
-- [ ] CSS is minified
-- [ ] JavaScript is minified
-- [ ] Passes Lighthouse audit (90+ scores)
-- [ ] Works in Chrome, Firefox, Safari, Edge
+- [ ] Keyboard navigation with visible focus indicators
+- [ ] ARIA labels where needed, images have alt text, forms have labels
+- [ ] CSS and JavaScript minified
 - [ ] Responsive on mobile, tablet, desktop
-- [ ] Tested with screen reader
-
----
-
-## Version History
-
-- **v1.0** - Initial GRAX Frontend Code & Style Guide (2025)
-
----
-
-## Contact & Support
-
-For questions about this guide or GRAX brand standards, contact the GRAX Creative Team.
-
-**Remember:** This guide ensures consistency across all GRAX web properties. When in doubt, refer to this document or ask for clarification rather than deviating from established standards.
+- [ ] Lighthouse audit 90+ scores
