@@ -23,6 +23,8 @@
   {% assign color_class = 'button-gradient text-white relative overflow-hidden border-transparent hover:text-white' %}
 {% elsif include.color == 'gray' %}
   {% assign color_class = 'bg-gray-100 text-black hover:bg-gray-300 active:bg-gray-300' %}
+{% elsif include.color == 'sapphire' %}
+  {% assign color_class = 'bg-sapphire-700 text-white hover:bg-sapphire-800 active:bg-sapphire-800' %}
 {% elsif include.color == 'link' %}
   {% assign color_class = 'arrow arrow-pink hover:underline' %}
 {% else %}
