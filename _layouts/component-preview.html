@@ -68,15 +68,38 @@ layout: default
     <div class="bg-gray-900 text-white w-32 h-32 flex justify-center items-center">gray.900</div>
   </div>
 
-  {% include components/eyebrow.html 
+  {% include components/eyebrow.html
     text = "utilities"
   %}
 
   <p class="mb-4">For errors</p>
 
-  <div class="flex justify-start flex-wrap gap-1">
+  <div class="flex justify-start flex-wrap gap-1 mb-4">
     <div class="bg-red-600 text-white w-32 h-32 flex justify-center items-center">red.600</div>
     <div class="bg-red-800 text-white w-32 h-32 flex justify-center items-center">red.800</div>
+  </div>
+
+  {% include components/eyebrow.html
+    text = "capstorm brand"
+  %}
+
+  <p class="mb-4">Primary brand colors for Capstorm. Use sapphire.700 as the primary brand color for Capstorm-branded elements.</p>
+
+  <div class="flex justify-start flex-wrap gap-1 mb-4">
+    <div class="bg-sapphire-700 text-white w-32 h-32 flex justify-center items-center">sapphire.700</div>
+    <div class="bg-sapphire-500 text-white w-32 h-32 flex justify-center items-center">sapphire.500</div>
+    <div class="bg-sapphire-400 text-white w-32 h-32 flex justify-center items-center">sapphire.400</div>
+    <div class="bg-sapphire-800 text-white w-32 h-32 flex justify-center items-center">sapphire.800</div>
+    <div class="bg-sapphire-900 text-white w-32 h-32 flex justify-center items-center">sapphire.900</div>
+    <div class="bg-sapphire-950 text-white w-32 h-32 flex justify-center items-center">sapphire.950</div>
+  </div>
+
+  <div class="flex justify-start flex-wrap gap-1">
+    <div class="bg-sapphire-50 w-32 h-32 flex justify-center items-center">sapphire.50</div>
+    <div class="bg-sapphire-100 w-32 h-32 flex justify-center items-center">sapphire.100</div>
+    <div class="bg-sapphire-200 w-32 h-32 flex justify-center items-center">sapphire.200</div>
+    <div class="bg-sapphire-300 w-32 h-32 flex justify-center items-center">sapphire.300</div>
+    <div class="bg-sapphire-600 text-white w-32 h-32 flex justify-center items-center">sapphire.600</div>
   </div>
 </section>
 
@@ -694,13 +717,18 @@ layout: default
       text = "Button"
     %}
 
-    {% include components/button.html 
+    {% include components/button.html
       color = 'gray'
       text = "Button"
     %}
+
+    {% include components/button.html
+      color = 'sapphire'
+      text = "Capstorm"
+    %}
   </div>
 
-  {% include components/eyebrow.html 
+  {% include components/eyebrow.html
     text = "arrows"
   %}
 
