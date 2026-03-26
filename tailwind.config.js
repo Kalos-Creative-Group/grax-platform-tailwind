@@ -380,6 +380,20 @@ module.exports = {
         900: '#160da2',
         950: '#0a053d', // deep-purple
       },
+      // Capstorm brand colors
+      sapphire: {
+        50: '#eaf5ff',
+        100: '#d8ecff',
+        200: '#b9dbff',
+        300: '#8fc3ff',
+        400: '#639fff',
+        500: '#3f7bff',
+        600: '#1e53ff',
+        700: '#0f3ce0', // capstorm primary
+        800: '#133bc0',
+        900: '#193996',
+        950: '#0f1f57',
+      },
     },
     extend: {
       borderRadius: {
